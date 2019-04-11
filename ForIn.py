@@ -41,6 +41,7 @@ for_emun()
 
 
 # 请使用迭代查找一个list中最小和最大值，并返回一个tuple：
+# 梁爽
 
 
 def find_min_and_max(l):

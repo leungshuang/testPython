@@ -1,7 +1,7 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
 # for in 迭代
-from collections import Iterable
+from collections.abc import Iterable
 
 
 def test_for_in():

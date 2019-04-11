@@ -29,3 +29,15 @@ def list_dir():
 
 
 list_dir()
+
+
+# 题目：如果list中既包含字符串，又包含整数，由于非字符串类型没有lower()方法，所以列表生成式会报错
+# L = ['Hello', 'World', 18, 'Apple', None] 请修改列表生成式，通过添加if语句保证列表生成式能正确地执行：
+def practice():
+    lst = ['Hello', 'World', 18, 'Apple', None]
+    print(lst)
+    r = [s.lower() for s in lst if isinstance(s, str)]
+    print(r)
+
+
+practice()

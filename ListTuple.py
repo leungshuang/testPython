@@ -27,8 +27,8 @@ print(classmates)
 classmates.append('ss')
 print(classmates)
 
-#tuple：元组。和list非常类似，但是tuple一旦初始化就不能修改
-t1=(1,2,3)
+# tuple：元组。和list非常类似，但是tuple一旦初始化就不能修改
+t1 =(1,2,3)
 
 t2=(1) #定义的不是tuple，是1这个数！这是因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是1。
 

@@ -41,3 +41,19 @@ def fib(max_num):
 
 
 fib(10)
+
+
+def fib2(max_num):  # 等价于fib()的函数：
+    n = 0
+    a = 0
+    b = 1
+    while n < max_num:
+        print(b)
+        t = a + b
+        a = b
+        b = t
+        n += 1
+    return 'done'
+
+
+fib2(10)

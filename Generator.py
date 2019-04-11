@@ -1,6 +1,6 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
-# 生成式
+# 生成器
 # 在Python中，这种一边循环一边计算的机制，称为生成器：generator。
 # generator创建 方法一：
 

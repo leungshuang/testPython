@@ -98,3 +98,39 @@ def fib2(max_num):  # 等价于fib()的函数：
 
 
 fib2(10)
+
+
+# 练习
+# 杨辉三角定义如下：
+#
+#           1
+#          / \
+#         1   1
+#        / \ / \
+#       1   2   1
+#      / \ / \ / \
+#     1   3   3   1
+#    / \ / \ / \ / \
+#   1   4   6   4   1
+#  / \ / \ / \ / \ / \
+# 1   5   10  10  5   1
+# 把每一行看做一个list，试写一个generator，不断输出下一行的list：
+
+
+def triangles():
+    p = [1]
+    while True:
+        yield p  # generator函数与普通函数的差别：在执行过程中，遇到yield就中断，下次又继续执行
+        p = [1] + [p[i] + p[i+1] for i in range(len(p)-1)] + [1]
+
+
+def test_triangles(line_num):
+    n = 0
+    for t in triangles():
+        print(t)
+        n = n + 1
+        if n == line_num:
+            break
+
+
+test_triangles(1)

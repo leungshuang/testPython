@@ -43,6 +43,47 @@ def fib(max_num):
 fib(10)
 
 
+# 上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print(b)改为yield b就可以了
+
+
+def fib3(num):
+    n, a, b = 0, 0, 1
+    print('fib3:')
+    while n < num:
+        yield b  # 也就是说，上面的函数和generator仅一步之遥。要把fib函数变成generator，只需要把print(b)改为yield b就可以了
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+
+
+print(fib3(10))  # 由于是generator
+
+
+# 用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中
+
+
+def fib4():
+    g = fib3(10)
+    while True:
+        try:
+            x = next(g)
+            print('g:', x)
+        except StopIteration as e:
+            print('Generator return value:', e.value)
+            break
+
+
+fib4()
+
+
+def print_fib3():
+    for value in fib3(10):
+        print(value)
+
+
+print_fib3()
+
+
 def fib2(max_num):  # 等价于fib()的函数：
     n = 0
     a = 0

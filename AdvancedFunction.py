@@ -65,3 +65,18 @@ def str2int(s):
 
 
 print(str2int('10'))
+
+
+# 上述用lambda函数进一步简化成：
+
+
+def char2num_2(s):
+    digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+    return digits[s]
+
+
+def str2int_2(s):
+    return reduce(lambda x, y: x * 10 + y, map(char2num_2, s))
+
+
+print(str2int_2('122'))
